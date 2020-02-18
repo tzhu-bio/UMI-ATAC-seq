@@ -8,8 +8,8 @@ for(my $i=0;$i<=length($kmer)-5;$i++){
   #print "",substr($kmer,$i,5),"\n";
 }
 
-my $rdir="/public/home/xbxu/Raw_data/ATAC-seq/20170505seq/Unaligned3/"; #input your raw fastq pathway
-my $wdir="/public/home/lcming/temp/result/"; # output umi information pathway
+my $rdir="~/umi_atac_seq/raw_data"; #input your raw fastq pathway
+my $wdir="~/umi_atac_seq/temp/result/"; # output umi information pathway
 if(! -e $rdir){
  print "error! readdir doesn't exist\n";
 }
