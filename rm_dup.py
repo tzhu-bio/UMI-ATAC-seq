@@ -3,7 +3,7 @@ import os,re
 def rm_dup_bam(bam_file,bam_out_folder):
     umi_type = {6:"A1",13:"A5",20:"A6",25:"A7"}
     sample_name = re.sub(".bam","",os.path.basename(bam_file))
-    print(sample_name+ ' is running')
+    print(sample_name+ ' is running...')
     rmdup_dic={}
     path_out = "%s/%s_rm_dup.bam"%(bam_out_folder,sample_name)
     infile = pysam.AlignmentFile(bam_file, "rb")
