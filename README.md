@@ -6,7 +6,7 @@ This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI 
 UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands.  It requires the Python modules  `gzip` ,`Bio.SeqIO.QualityIO module`and `pysam`.It also requires the software `trimmomatic`.
 ## workflow
 
-!https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg
+! https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg
 ##  Programs
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
