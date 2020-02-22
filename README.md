@@ -32,7 +32,7 @@ This program removes PCR duplicates with mapping coordinates.You can also use so
 This program removes PCR duplicates with mapping coordinates and UMIs. The reads have the identical mapping coordinates but have differnet umi, we consider the reads are from identical Tn5 insertion events rather than PCR duplicates. 
 **Usage**: rm_umi_dup(`input bam file`,`output path`)
 
-# Publication
+## Publication
 
 
 
