@@ -1,6 +1,6 @@
 # UMI-ATAC-dedup
 
-This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI information from raw fastq read1 file,rename the fastq read2 header,remove sequencing adapters and PCR deduplicates with UMI.
+This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI information from raw fastq read1 file,rename the fastq read2 header,remove sequencing adapters and PCR deduplicates with UMIs.
 
 ## Dependencies
 UMI-ATAC-dedup is mainly tested  in Python 3 , perl and shell commands.  It requires the Python modules  `gzip` and `pysam`.It also requires the software `trimmomatic`.
