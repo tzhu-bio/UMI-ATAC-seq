@@ -3,7 +3,7 @@
 This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI information from raw fastq read1 file,rename the fastq read2 header,remove sequencing adapters and PCR deduplicates with UMIs.
 
 ## Dependencies
-UMI-ATAC-dedup is mainly tested  in Python 3 , perl and shell commands.  It requires the Python modules  `gzip` and `pysam`.It also requires the software `trimmomatic`.
+UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands.  It requires the Python modules  `gzip` ,`Bio.SeqIO.QualityIO module`and `pysam`.It also requires the software `trimmomatic`.
 ## workflow
 
 ```mermaid
@@ -29,8 +29,9 @@ F --mapping coordinates and UMI -->H(_rm_umidup.bam)
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
-### extract_umi.pl
+### extract_umi.py
 This program extracts UMIs from Illumina sequence reads and adds them to the fastq read1 header. It also remove the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it . It reads and writes in FASTQ format . This step uses the raw fastq read1 file (.gz).
+**Usage**:extract_umi(`fastq_read1`,`output_file_name`)
 
 ### rename_fastq_read2_header.py
 
