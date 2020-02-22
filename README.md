@@ -6,25 +6,7 @@ This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI 
 UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands.  It requires the Python modules  `gzip` ,`Bio.SeqIO.QualityIO module`and `pysam`.It also requires the software `trimmomatic`.
 ## workflow
 
-```mermaid
-sequenceDiagram
-```
-```mermaid
-graph LR
-A(raw fastq read1.gz) -- extract umi --> B(fastq read1 umi.gz)
-C(raw fastq read2.gz) --> D(fastq read2 umi.gz)
-B --provide umi-->D
-B -->E(remove adapters)
-D -->E(remove adapters)
-E --mapping to genome-->F(.bam)
-F --mapping coordinates -->G(_rm_dup.bam)
-F --mapping coordinates and UMI -->H(_rm_umidup.bam)
-
-
-
-
-```
-https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg
+!https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg
 ##  Programs
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
