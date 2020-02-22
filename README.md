@@ -24,7 +24,7 @@ F --mapping coordinates and UMI -->H(_rm_umidup.bam)
 
 
 ```
-
+https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg
 ##  Programs
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
