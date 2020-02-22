@@ -1,6 +1,6 @@
 import pysam
 import os,re
-def rm_umidup_bam(bam_file,bam_out_folder):
+def rm_umi_dup(bam_file,bam_out_folder):
     umi_type = {6:"A1",13:"A5",20:"A6",25:"A7"}
     sample_name = re.sub(".bam","",os.path.basename(bam_file))
     print(sample_name+' is running...')
