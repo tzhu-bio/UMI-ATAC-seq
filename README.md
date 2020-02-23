@@ -9,8 +9,6 @@ UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands.  It requires th
 ![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg)
 ##  Programs
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
 ### extract_umi.py
 This program extracts UMIs from Illumina sequence reads and adds them to the fastq read1 header. It also remove the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it . It reads and writes in FASTQ format . This step uses the raw fastq read1 file (.gz).
 **Usage**:extract_umi(`fastq_read1`,`output_file_name`)
