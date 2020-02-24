@@ -1,4 +1,3 @@
-
 import pysam
 import os,re
 import argparse, sys
