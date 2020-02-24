@@ -6,14 +6,12 @@ parser.add_argument('umi_fr1', action = 'store', nargs = '?', type = str, defaul
 parser.add_argument('fr2', action = 'store', nargs = '?', type = str, default = sys.stdin, help = 'Input FASTQ read2')
 parser.add_argument('outfile',action = 'store', nargs = '?',type = argparse.FileType('wb'), default = sys.stdout,help = 'Output file name')
 args = parser.parse_args()
-#def rename_fastq_read2_header(umi_fastq_read1,fastq_read2,umi_fastq_read2_folder):
 f1 = gzip.open(args.umi_fr1,"rt",encoding='utf-8')
 f2 = gzip.open(args.fr2,"rt",encoding='utf-8')
 sample_name_1 = os.path.basename(args.umi_fr1)
 sample_name_2 = os.path.basename(args.outfile)
 print('Extract UMIs from '+sample_name_1+' and add UMIs to '+sample_name_2+'.')
-#path_out = "%s/%s_umi_read2"%(umi_fastq_read2_folder,sample_name)
-f3 = gzip.open(args.outfile,'wb') #file you want to write the result
+f3 = gzip.open(args.outfile,'wb')
 y=0
 umi=[]
 lst_read2_line=[]
