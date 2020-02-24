@@ -10,7 +10,7 @@ f1 = gzip.open(args.umi_fr1,"rt",encoding='utf-8')
 f2 = gzip.open(args.fr2,"rt",encoding='utf-8')
 sample_name_1 = os.path.basename(args.umi_fr1)
 sample_name_2 = os.path.basename(args.outfile)
-print('Extract UMIs from '+sample_name_1+' and add UMIs to '+sample_name_2+'.')
+print('Extract UMIs from '+sample_name_1+' and add it to '+sample_name_2+'.')
 f3 = gzip.open(args.outfile,'wb')
 y=0
 umi=[]
