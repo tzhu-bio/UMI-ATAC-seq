@@ -1,22 +1,23 @@
+
 import pysam
 import os,re
-def rm_dup(bam_file,bam_out_folder):
-    umi_type = {6:"A1",13:"A5",20:"A6",25:"A7"}
-    sample_name = re.sub(".bam","",os.path.basename(bam_file))
-    print(sample_name+ ' is running...')
-    rmdup_dic={}
-    path_out = "%s/%s_rm_dup.bam"%(bam_out_folder,sample_name)
-    infile = pysam.AlignmentFile(bam_file, "rb")
-    outfile = pysam.AlignmentFile(path_out, "wb", template=infile)
-    for read in infile:
-        umi = read.qname.split(':')[7]
-        if len(umi) in umi_type:
-            seq_id = "_".join([read.reference_name,str(read.pos),str(read.tlen)])
-            if seq_id not in rmdup_dic:
-                rmdup_dic[seq_id] =  1
-                outfile.write(read)
-            else:
-                rmdup_dic[seq_id] +=  1
-    print('Done!')
-    
+import argparse, sys
+parser = argparse.ArgumentParser(description='Removing PCR duplicates with mapping coordinates.')
+parser.add_argument('infile', action = 'store', nargs = '?', type = str, default = sys.stdin, help = 'Input mapping paired bam')
+parser.add_argument('outfile',action = 'store', nargs = '?',type = argparse.FileType('w'), default = sys.stdout,help = 'Output file name')
+args = parser.parse_args()
+sample_name =os.path.basename(args.infile)
+print(sample_name+ ' is running...')
+rmdup_dic={}
+in_file = pysam.AlignmentFile(args.infile, "rb")
+out_file = pysam.AlignmentFile(args.outfile, "wb", template=in_file)
+for read in in_file:
+    seq_id = "_".join([read.reference_name,str(read.pos),str(read.tlen)])
+    if seq_id not in rmdup_dic:
+        rmdup_dic[seq_id] =  1
+        out_file.write(read)
+    else:
+        rmdup_dic[seq_id] +=  1
+print('Done!')
+
 
