@@ -4,6 +4,11 @@ This pipeline is for UMI-ATAC-seq raw data processing, including extract the UMI
 
 ## Dependencies
 UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands. It requires the Python modules  `gzip`, `Bio.SeqIO.QualityIO module`and `pysam`. It also requires the software `trimmomatic`.
+To install these packages with conda run:
+`gzip`: conda install -c ostrokach gzip
+`Bio.SeqIO.QualityIO module`: conda install -c anaconda biopython
+`pysam`: conda install -c bioconda pysam
+`trimmomatic`: conda install -c bioconda trimmomatic
 ## workflow
 
 ![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg)
