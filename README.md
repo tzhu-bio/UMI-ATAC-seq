@@ -1,9 +1,9 @@
 # UMI-ATAC-dedup
 
-This pipeline is for UMI-ATAC-seq raw data processing,including extract the UMI from raw fastq read1 file, rename the fastq read2 header,remove sequencing adapters and PCR deduplications with UMIs.
+This pipeline is for UMI-ATAC-seq raw data processing, including extract the UMIs from raw FASTQ read1 file, rename the fastq read2 header,remove sequencing adapters and PCR deduplications with UMIs.
 
 ## Dependencies
-UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands.  It requires the Python modules  `gzip` ,`Bio.SeqIO.QualityIO module`and `pysam`.It also requires the software `trimmomatic`.
+UMI-ATAC-dedup is mainly tested  in Python 3 and shell commands. It requires the Python modules  `gzip`,`Bio.SeqIO.QualityIO module`and `pysam`.It also requires the software `trimmomatic`.
 ## workflow
 
 ![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg)
@@ -24,7 +24,7 @@ This step is performed on shell commands. Due to the design of UMI-ATAC-seq libr
 This program removes PCR duplicates with mapping coordinates.You can also use softwares(eg,`Picard`,`samtools`) to do this. 
 
 ### rm_umi_dup.py
-This program removes PCR duplicates with mapping coordinates and UMIs. The reads have the identical mapping coordinates but have differnet UMIs, we consider the they are from identical Tn5 insertion events rather than true PCR duplicates. 
+This program removes PCR duplicates with mapping coordinates and UMIs. The reads have the identical mapping coordinates but have differnet UMIs, we consider they are from identical Tn5 insertion events rather than true PCR duplicates. 
 
 ## Publication
 
