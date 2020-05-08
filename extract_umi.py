@@ -3,7 +3,7 @@ import gzip
 import argparse, sys
 from Bio.SeqIO.QualityIO import FastqGeneralIterator
 parser = argparse.ArgumentParser(description='Extract UMIs from FASTQ read1.')
-parser.add_argument('infile', action = 'store', nargs = '?', type = str, default = sys.stdin, help = 'Input mapping paired bam')
+parser.add_argument('infile', action = 'store', nargs = '?', type = str, default = sys.stdin, help = 'Input FASTQ read1')
 parser.add_argument('outfile',action = 'store', nargs = '?',type = argparse.FileType('wb'), default = sys.stdout,help = 'Output file name')
 args = parser.parse_args()
 me_1 = re.compile("AGATG")
