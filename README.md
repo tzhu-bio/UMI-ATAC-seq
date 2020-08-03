@@ -8,6 +8,7 @@ UMI-ATAC-dedup is mainly tested in Python 3 and shell commands. It requires the 
 To install these packages with conda run:
 #### `gzip`: conda install -c ostrokach gzip
 #### `Bio.SeqIO.QualityIO module`: conda install -c anaconda biopython
+#### `UMI tools`:conda install -c bioconda umi_tools 
 #### `pysam`: conda install -c bioconda pysam
 #### `trimmomatic`: conda install -c bioconda trimmomatic
 ## workflow
@@ -15,12 +16,16 @@ To install these packages with conda run:
 ![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg)
 ##  Programs
 Run python program with the -h argument for detailed help on command-line parameters.
-### extract_umi.py
-This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1 header. It also removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities). It reads and writes in FASTQ format. 
+### umi_tools extract
+We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1/read2 header. We can set `--bc-pattern=NNNNNN`. We can process the paired-end UMI-ATAC-seq sequencing data like this:
 
-### rename_fastq_read2_header.py
+`$ umi_tools extract -I pair.1.fastq.gz --bc-pattern=NNNNNN \ 
+       --read2-in=pair.2.fastq.gz --stdout=processed.1.fastq.gz \
+       --read2-out=processed.2.fastq.gz`
 
-This program adds the UMIs to fastq read2 header. The input and output are gzip file format (`.gz`).
+### remove_me.py
+
+This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities). It reads and writes in FASTQ format.  The input and output are gzip file format (`.gz`).
 
 ### remove adapters.cmd
 This step is performed on shell commands. Due to the design of UMI-ATAC-seq library, we need to customize a adapters combination file.
