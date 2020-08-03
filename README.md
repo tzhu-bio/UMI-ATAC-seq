@@ -17,7 +17,7 @@ To install these packages with conda run:
 ##  Programs
 Run python program with the -h argument for detailed help on command-line parameters.
 ### umi_tools extract
-We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1/read2 header. We can set `--bc-pattern=NNNNNN`. We can process the paired-end UMI-ATAC-seq sequencing data like this:
+We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1/read2 header. We can set `--bc-pattern=NNNNNN`(Here we take the first six bases as UMI sequence). We can process the paired-end UMI-ATAC-seq sequencing data like this:
 
 `$ umi_tools extract -I pair.1.fastq.gz --bc-pattern=NNNNNN \ 
        --read2-in=pair.2.fastq.gz --stdout=processed.1.fastq.gz \
