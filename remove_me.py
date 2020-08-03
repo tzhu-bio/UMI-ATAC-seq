@@ -11,7 +11,7 @@ me_7 = re.compile("GTATA")
 me_15 = re.compile("GACAG")
 file_in = gzip.open(args.infile, "rt",encoding='utf-8')
 UMI_out = gzip.open(args.outfile,'wt')
-print('Removing ME sequences with ' + os.path.basename(args.infile)+'...')
+print('Removing ME sequences in ' + os.path.basename(args.infile)+'...')
 for (title,sequence,quantily) in FastqGeneralIterator(file_in):
     me_1_pos = me_1.search(sequence)
     me_7_pos = me_7.search(sequence)
