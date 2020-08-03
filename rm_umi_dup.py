@@ -6,7 +6,7 @@ parser.add_argument('infile', action = 'store', nargs = '?', type = str, default
 parser.add_argument('outfile',action = 'store', nargs = '?',type = argparse.FileType('w'), default = sys.stdout,help = 'Output file name')
 args = parser.parse_args()
 sample_name =os.path.basename(args.infile)
-print(sample_name+ ' is running...')
+print(sample_name+ ' is removing duplicates with UMIs...')
 umi_id_dic={}
 in_file = pysam.AlignmentFile(args.infile, "rb")
 out_file = pysam.AlignmentFile(args.outfile, "wb", template=in_file)
