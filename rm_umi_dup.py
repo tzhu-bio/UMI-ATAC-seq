@@ -11,7 +11,7 @@ umi_id_dic={}
 in_file = pysam.AlignmentFile(args.infile, "rb")
 out_file = pysam.AlignmentFile(args.outfile, "wb", template=in_file)
 for read in in_file:
-    umi=read.qname.split(':')[7]
+    umi=(read.qname.split('_')[1]).split(' ')[0]
     umi_id = "_".join([umi,read.reference_name,str(read.pos),str(read.tlen)])
     if umi_id not in umi_id_dic:
         umi_id_dic[umi_id] =  1
