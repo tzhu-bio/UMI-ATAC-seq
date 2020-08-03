@@ -13,7 +13,7 @@ To install these packages with conda run:
 + #### `trimmomatic`: conda install -c bioconda trimmomatic
 ## workflow
 
-![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.jpg)
+![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.png)
 ##  Programs
 Run python program with the -h argument for detailed help on command-line parameters.
 
