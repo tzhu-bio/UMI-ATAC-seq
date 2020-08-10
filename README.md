@@ -21,13 +21,13 @@ Run python program with the -h argument for detailed help on command-line parame
 This step is performed by `trimmomatic`. Due to the design of UMI-ATAC-seq library, we need to remove sequencing adapters with `NexteraPE-PE` adapter file.
 
 + ### [umi_tools extract](https://umi-tools.readthedocs.io/en/latest/QUICK_START.html)
-We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1/read2 header. We can set `--bc-pattern=NNNNNN`(Here we take the first six bases as UMI sequence). We can process the paired-end UMI-ATAC-seq sequencing data like this:
+We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1/read2 header. We can set `--bc-pattern=NNNNNN`(Here we take the first six bases as UMI sequence). We can process the paired-end UMI-ATAC-seq data like this:
 
 ```
 $ umi_tools extract -I pair.1.fastq.gz --bc-pattern=NNNNNN --read2-in=pair.2.fastq.gz --stdout=processed.1.fastq.gz --read2-out=processed.2.fastq.gz
 ```
 + ### remove_me.py
-This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities). It reads and writes in FASTQ format.  The input and output are gzip file format (`.gz`).
+This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities) in FASTQ read1 file. It reads and writes in FASTQ format.  The input and output are gzip file format (`.gz`).
 
 
 + ### rm_dup.py
