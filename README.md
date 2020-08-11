@@ -22,7 +22,7 @@ Run python program with the -h argument for detailed help on command-line parame
 This step is performed by `trimmomatic`. Due to the design of UMI-ATAC-seq library, we need to remove sequencing adapters with `NexteraPE-PE` adapter file.
 
 + ### [umi_tools extract](https://umi-tools.readthedocs.io/en/latest/QUICK_START.html)
-We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1 header. We can set `--bc-pattern=NNNNNN`(Here we take the first six bases as UMI sequence). Here we do not recommend that you use `umi_tools` to add UMIs information to FASTQ read2 at the same time. We can process the paired-end UMI-ATAC-seq data like this:
+We use the `extract` function in `UMI tools` package.This program extracts UMIs from Illumina sequence reads and adds them to the FASTQ read1 and read2 header. We can set `--bc-pattern=NNNNNN`(Here we take the first six bases as UMI sequence).  We can process the paired-end UMI-ATAC-seq data like this:
 
 ```
 $ umi_tools extract --stdin=pair.1.fastq.gz --bc-pattern=NNNNNN --log=processed.log --stdout processed.1.fastq.gz
@@ -31,7 +31,7 @@ $ umi_tools extract --stdin=pair.1.fastq.gz --bc-pattern=NNNNNN --log=processed.
 This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities) in FASTQ read1 file. It reads and writes in FASTQ format.  The input and output are gzip file format (`.gz`).
 
 + ### paired.py
-After removing the ME sequence in FASTQ read1 file, we need to paird the read1 and read2 file. This program will pair the `umi fatsq read2 paired.gz` file and `umi fastq read1 rm_me paired.gz`(genearated by `remove_me.py`). 
+After removing the ME sequence in FASTQ read1 file, we need to paird the read1 and read2 file. This program will pair the `umi fatsq read2.gz` file and `umi fastq read1 rm_me.gz`(genearated by `remove_me.py`). 
 
 + ### rm_dup.py
 This program removes PCR duplicates with mapping coordinates. You can also use softwares(such as `Picard`,`samtools`) to do this. 
