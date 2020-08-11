@@ -19,7 +19,7 @@ for (title,sequence,quantily) in FastqGeneralIterator(f1):
 for (title,sequence,quantily) in FastqGeneralIterator(f2):
     r2_name=title.strip().split(' ')[0]
     if r2_name in r1_lst:
-        f3.write('@'+title+'\n'+sequence+'\n'+'+'+'\n'+quantily)
+        f3.write('@'+title+'\n'+sequence+'\n'+'+'+'\n'+quantily+'\n')
 print('Done!')
 f1.close()
 f2.close()
