@@ -32,7 +32,7 @@ $ umi_tools extract --stdin=pair.1.fastq.gz --bc-pattern=NNNNNN --log=processed.
 This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence before it (both sequence and qualities) in FASTQ read1 file. It reads and writes in FASTQ format.  The input and output are gzip file format (`.gz`).
 
 + ### repair.sh
-After removing the ME sequence in FASTQ read1 file, we need to repair the read1 and read2 file so that they are paired. Here we use the `repair.sh` function in `bbmap` package. This program will pair the `umi fatsq read2.gz` file and `umi fastq read1 rm_me.gz`(genearated by `remove_me.py`). 
+After removing the ME sequence in FASTQ read1 file, we need to repair the read1 and read2 file so that they are paired. Here we use the `repair.sh` function in `bbmap` tool. This program will pair the `umi fatsq read2.gz` file and `umi fastq read1 rm_me.gz`(genearated by `remove_me.py`). 
 
 + ### rm_dup.py
 This program removes PCR duplicates with mapping coordinates. You can also use softwares(such as `Picard`,`samtools`) to do this. 
