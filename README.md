@@ -13,7 +13,7 @@ To install these packages with conda run:
 + #### `trimmomatic`: conda install -c bioconda trimmomatic
 + #### `fuzzysearch`: conda install -c travis fuzzysearch
 + #### `bbmap`: conda install -c bioconda bbmap 
-## workflow
+## Workflow
 
 ![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/umi_atac_workflow.png)
 ##  Programs
