@@ -35,7 +35,7 @@ This program removes the ME sequence (AGATGTGTATAAGAGACAG) and the sequence befo
 After removing the ME sequence in FASTQ read1 file, we need to repair the read1 and read2 file so that they are paired. Here we use the `repair.sh` function in `bbmap` tool. This program will pair the `umi fatsq read2.gz` file and `umi fastq read1 rm_me.gz`(genearated by `remove_me.py`). 
 
 ```
-$ repair.sh in1=umi_fastq_read1_rm_me.gz in2=umi_fatsq_read2.gz out1=umi_read1.fq.gz out2=umi_read2.fq.gz
+$ repair.sh in1=umi_fastq_read1_rm_me.gz in2=umi_fatsq_read2.gz out1=umi_read1.fq out2=umi_read2.fq
 ```
 
 + ### rm_dup.py
