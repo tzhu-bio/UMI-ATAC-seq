@@ -14,7 +14,7 @@ To install these packages with conda run:
 + #### `fuzzysearch`: conda install -c travis fuzzysearch
 ## workflow
 
-![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/umi_atac_workflow.png)
+![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.png)
 ##  Programs
 Run python program with the -h argument for detailed help on command-line parameters.
 
