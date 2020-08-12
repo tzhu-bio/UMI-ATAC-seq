@@ -15,7 +15,7 @@ To install these packages with conda run:
 + #### `bbmap`: conda install -c bioconda bbmap 
 ## workflow
 
-![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/workflow.png)
+![image]( https://github.com/tzhu-bio/UMI-ATAC-seq/blob/master/umi_atac_workflow.png)
 ##  Programs
 Run python program with the -h argument for detailed help on command-line parameters.
 
