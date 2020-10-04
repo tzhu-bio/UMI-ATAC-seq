@@ -11,7 +11,6 @@ parser.add_argument('outfile',action = 'store', nargs = '?',type = argparse.File
 args = parser.parse_args()
 time_start=time.time()
 def match(title,sequence,quantily):
-    lst=[]
     fuzzy_match=find_near_matches("AGATGTGTATAAGAGACAG", sequence, max_deletions=1, max_insertions=0,max_substitutions=4)
     if fuzzy_match:
         pos_start=str(fuzzy_match[0]).split(',')[0].split('=')[1]
