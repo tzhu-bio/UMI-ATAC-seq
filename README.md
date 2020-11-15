@@ -42,7 +42,7 @@ This program removes PCR duplicates with mapping coordinates. You can also use s
 This program removes PCR duplicates with mapping coordinates and UMIs. The reads have the identical mapping coordinates but have differnet UMIs, and we consider they come from different Tn5 insertion events rather than real PCR duplicates. 
 
 ## Publication
-Zhu, T., Liao, K., Zhou, R. et al. ATAC-seq with unique molecular identifiers improves quantification and footprinting. Commun Biol 3, 675 (2020).
-
+Zhu, T., Liao, K., Zhou, R. et al. ATAC-seq with unique molecular identifiers improves quantification and footprinting. *Commun Biol* 3, 675 (2020).
+**DOI:** https://doi.org/10.1038/s42003-020-01403-4
 
 
